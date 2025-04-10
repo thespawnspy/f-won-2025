@@ -1,20 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>F WON 2025 Leaderboard</title>
+  <title>F WON 2025 – Submit Prediction</title>
 </head>
 <body>
-  <h1>Leaderboard</h1>
-  <div id="leaderboard"></div>
-  <script>
-    fetch('../data/sample-leaderboard.json')
-      .then(response => response.json())
-      .then(data => {
-        const div = document.getElementById('leaderboard');
-        div.innerHTML = data.map(d =>
-          `<p>${d.name}: ${d.score} pts (${d.race})</p>`
-        ).join('');
-      });
-  </script>
+  <h1>Submit Your Prediction</h1>
+
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSfFoEfERwTlRvFQC7biWTrxnhiuxgrGGuECSrOff95ChrXclQ/viewform?embedded=true" 
+    width="100%" 
+    height="1800" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0">
+    Loading…
+  </iframe>
+
 </body>
 </html>
