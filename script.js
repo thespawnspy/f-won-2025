@@ -1,19 +1,13 @@
+
 document.getElementById("predictionForm").addEventListener("submit", function(event) {
   event.preventDefault();
+
   const form = event.target;
   const formData = new FormData(form);
-  const data = {};
-  formData.forEach((value, key) => {
-    data[key] = value;
-  });
 
-  fetch("https://script.google.com/macros/s/AKfycbwskciQrBAg0sE6k-Eh07iHDoVgS8sjnxiyKeT7IWoERPkPdCrLxZqvF4UZ7nGt2uMn/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzvIqh146JgpQYxexZD0jRlsn-jpadqIHg_w4Pduvw0a5lzjoQ6Ht3ZAji9kB-mscIH/exec", {
     method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
+    body: new URLSearchParams(formData)
   })
   .then(() => {
     alert("Prediction submitted!");
@@ -33,8 +27,7 @@ const drivers = [
   "Liam Lawson (Racing Bulls)", "Isaac Hadjar (Racing Bulls)", "Oscar Piastri (McLaren)", "Lando Norris (McLaren)"
 ];
 
-const fieldIds = ["pole", "winner", "second", "third", "fastest", "retire", "dotd"];
-fieldIds.forEach(id => {
+["pole", "winner", "second", "third", "fastest", "retire", "dotd"].forEach(id => {
   const select = document.getElementById(id);
   drivers.forEach(driver => {
     const option = document.createElement("option");
