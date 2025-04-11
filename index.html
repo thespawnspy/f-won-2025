@@ -14,32 +14,48 @@
       <input type="text" id="name" name="Name" required>
 
       <label for="pole">Pole Position:</label>
-      <select id="pole" name="Pole Position" required>
-        <option value="">-- Select --</option>
-        <option>Lewis Hamilton (Ferrari)</option>
-        <option>Charles Leclerc (Ferrari)</option>
-        <option>Max Verstappen (Red Bull)</option>
-        <option>Yuki Tsunoda (Red Bull)</option>
-        <option>George Russell (Mercedes)</option>
-        <option>Kimi Antonelli (Mercedes)</option>
-        <option>Carlos Sainz (Williams)</option>
-        <option>Alexander Albon (Williams)</option>
-        <option>Lance Stroll (Aston Martin)</option>
-        <option>Fernando Alonso (Aston Martin)</option>
-        <option>Pierre Gasly (Alpine)</option>
-        <option>Jack Doohan (Alpine)</option>
-        <option>Nico Hülkenberg (Kick Sauber)</option>
-        <option>Gabriel Bortoleto (Kick Sauber)</option>
-        <option>Esteban Ocon (Haas)</option>
-        <option>Oliver Bearman (Haas)</option>
-        <option>Liam Lawson (Racing Bulls)</option>
-        <option>Isaac Hadjar (Racing Bulls)</option>
-        <option>Oscar Piastri (McLaren)</option>
-        <option>Lando Norris (McLaren)</option>
+      <select id="pole" name="Pole Position" required></select>
+
+      <label for="winner">Winner:</label>
+      <select id="winner" name="Winner" required></select>
+
+      <label for="second">2nd Place:</label>
+      <select id="second" name="2nd Place" required></select>
+
+      <label for="third">3rd Place:</label>
+      <select id="third" name="3rd Place" required></select>
+
+      <label for="fastest">Fastest Lap:</label>
+      <select id="fastest" name="Fastest Lap" required></select>
+
+      <label for="safetycar">Safety Car?</label>
+      <select id="safetycar" name="Safety Car" required>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
       </select>
 
-      <!-- Repeat the above block for Winner, 2nd Place, 3rd Place, etc. -->
-      <!-- You had all of these — we can reinsert them if needed -->
+      <label for="retire">First to Retire:</label>
+      <select id="retire" name="First to Retire" required></select>
+
+      <label for="finishers">Total Finishers:</label>
+      <select id="finishers" name="Total Finishers" required>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+      </select>
+
+      <label for="margin">Winning Margin (in seconds):</label>
+      <select id="margin" name="Winning Margin (in seconds)" required>
+        <option value="0.000 – 1.000">0.000 – 1.000</option>
+        <option value="1.001 – 5.000">1.001 – 5.000</option>
+        <option value="5.001 – 10.000">5.001 – 10.000</option>
+        <option value="10.001+">10.001+</option>
+      </select>
+
+      <label for="dotd">Driver of the Day:</label>
+      <select id="dotd" name="Driver of the Day" required></select>
 
       <button type="submit">Submit Predictions</button>
     </form>
