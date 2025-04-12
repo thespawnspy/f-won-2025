@@ -33,6 +33,10 @@ window.onload = function () {
     const select = document.getElementById(id);
     if (!select) return;
 
+    // Clear existing options just in case
+    select.innerHTML = "";
+
+    // Add a proper placeholder
     const placeholder = document.createElement("option");
     placeholder.value = "";
     placeholder.textContent = "Choose your driver";
@@ -40,6 +44,7 @@ window.onload = function () {
     placeholder.selected = true;
     select.appendChild(placeholder);
 
+    // Populate with drivers
     drivers.forEach(driver => {
       const option = document.createElement("option");
       option.value = driver;
@@ -47,4 +52,14 @@ window.onload = function () {
       select.appendChild(option);
     });
   });
+
+  // Set default placeholder for Safety Car and Total Finishers
+  const safetyCar = document.getElementById("safetycar");
+  if (safetyCar) safetyCar.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Yes / No</option>`);
+
+  const finishers = document.getElementById("finishers");
+  if (finishers) finishers.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Choose total finishers</option>`);
+
+  const margin = document.getElementById("margin");
+  if (margin) margin.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Choose margin</option>`);
 };
