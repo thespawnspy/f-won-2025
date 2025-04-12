@@ -18,28 +18,33 @@ document.getElementById("predictionForm").addEventListener("submit", function(ev
   });
 });
 
-const drivers = [
-  "Lewis Hamilton (Ferrari)", "Charles Leclerc (Ferrari)", "Max Verstappen (Red Bull)", "Yuki Tsunoda (Red Bull)",
-  "George Russell (Mercedes)", "Kimi Antonelli (Mercedes)", "Carlos Sainz (Williams)", "Alexander Albon (Williams)",
-  "Lance Stroll (Aston Martin)", "Fernando Alonso (Aston Martin)", "Pierre Gasly (Alpine)", "Jack Doohan (Alpine)",
-  "Nico Hülkenberg (Kick Sauber)", "Gabriel Bortoleto (Kick Sauber)", "Esteban Ocon (Haas)", "Oliver Bearman (Haas)",
-  "Liam Lawson (Racing Bulls)", "Isaac Hadjar (Racing Bulls)", "Oscar Piastri (McLaren)", "Lando Norris (McLaren)"
-];
+window.onload = function () {
+  const drivers = [
+    "Lewis Hamilton (Ferrari)", "Charles Leclerc (Ferrari)", "Max Verstappen (Red Bull)", "Yuki Tsunoda (Red Bull)",
+    "George Russell (Mercedes)", "Kimi Antonelli (Mercedes)", "Carlos Sainz (Williams)", "Alexander Albon (Williams)",
+    "Lance Stroll (Aston Martin)", "Fernando Alonso (Aston Martin)", "Pierre Gasly (Alpine)", "Jack Doohan (Alpine)",
+    "Nico Hülkenberg (Kick Sauber)", "Gabriel Bortoleto (Kick Sauber)", "Esteban Ocon (Haas)", "Oliver Bearman (Haas)",
+    "Liam Lawson (Racing Bulls)", "Isaac Hadjar (Racing Bulls)", "Oscar Piastri (McLaren)", "Lando Norris (McLaren)"
+  ];
 
-// Add drivers to all relevant dropdowns
-["winner", "second", "third", "fastest", "retire", "dotd", "mostpositions"].forEach(id => {
-  const select = document.getElementById(id);
-  const placeholder = document.createElement("option");
-  placeholder.value = "";
-  placeholder.textContent = "Choose your driver";
-  placeholder.disabled = true;
-  placeholder.selected = true;
-  select.appendChild(placeholder);
+  const dropdownIds = ["winner", "second", "third", "fastest", "retire", "dotd", "mostpositions"];
 
-  drivers.forEach(driver => {
-    const option = document.createElement("option");
-    option.value = driver;
-    option.textContent = driver;
-    select.appendChild(option);
+  dropdownIds.forEach(id => {
+    const select = document.getElementById(id);
+    if (!select) return;
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Choose your driver";
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    select.appendChild(placeholder);
+
+    drivers.forEach(driver => {
+      const option = document.createElement("option");
+      option.value = driver;
+      option.textContent = driver;
+      select.appendChild(option);
+    });
   });
-});
+};
