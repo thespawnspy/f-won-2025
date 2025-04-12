@@ -63,3 +63,4 @@ window.onload = function () {
   const margin = document.getElementById("margin");
   if (margin) margin.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Choose margin</option>`);
 };
+
