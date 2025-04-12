@@ -1,4 +1,3 @@
-
 document.getElementById("predictionForm").addEventListener("submit", function(event) {
   event.preventDefault();
 
@@ -27,8 +26,16 @@ const drivers = [
   "Liam Lawson (Racing Bulls)", "Isaac Hadjar (Racing Bulls)", "Oscar Piastri (McLaren)", "Lando Norris (McLaren)"
 ];
 
-["pole", "winner", "second", "third", "fastest", "retire", "dotd"].forEach(id => {
+// Add drivers to all relevant dropdowns
+["winner", "second", "third", "fastest", "retire", "dotd", "mostpositions"].forEach(id => {
   const select = document.getElementById(id);
+  const placeholder = document.createElement("option");
+  placeholder.value = "";
+  placeholder.textContent = "Choose your driver";
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  select.appendChild(placeholder);
+
   drivers.forEach(driver => {
     const option = document.createElement("option");
     option.value = driver;
