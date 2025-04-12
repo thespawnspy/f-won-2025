@@ -53,7 +53,6 @@ window.onload = function () {
     });
   });
 
-  // Set default placeholder for Safety Car and Total Finishers
   const safetyCar = document.getElementById("safetycar");
   if (safetyCar) safetyCar.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Yes / No</option>`);
 
