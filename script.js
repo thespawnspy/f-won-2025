@@ -27,7 +27,7 @@ window.onload = function () {
     "Liam Lawson (Racing Bulls)", "Isaac Hadjar (Racing Bulls)", "Oscar Piastri (McLaren)", "Lando Norris (McLaren)"
   ];
 
-  const dropdownIds = ["winner", "second", "third", "fastest", "retire", "dotd", "mostpositions"];
+  const dropdownIds = ["winner", "second", "third", "fastest", "retire", "dotd"];
 
   dropdownIds.forEach(id => {
     const select = document.getElementById(id);
@@ -63,4 +63,3 @@ window.onload = function () {
   const margin = document.getElementById("margin");
   if (margin) margin.insertAdjacentHTML("afterbegin", `<option value="" selected disabled>Choose margin</option>`);
 };
-
